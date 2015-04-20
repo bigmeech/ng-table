@@ -34,5 +34,12 @@
   },
   "scripts": {
     "test": "karma start --single-run --no-auto-watch"
+  },
+  "dependencies": {
+    "gulp": "~3.8.11",
+    "dgeni": "~0.4.1",
+    "dgeni-packages": "~0.10.13",
+    "canonical-path": "0.0.2",
+    "lodash": "~3.7.0"
   }
 }
