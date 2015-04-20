@@ -3,7 +3,6 @@ module.exports = function indexPageProcessor(){
         $runBefore:['rendering-docs'],
         $runAfter:['componentsDataProcessor'],
         $process:function(docs){
-            console.log(docs);
         }
     }
 };

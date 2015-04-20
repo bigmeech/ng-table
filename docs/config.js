@@ -19,16 +19,41 @@ module.exports = new Package('ng-table', [
         };
 
         templateFinder.templateFolders = [
-            path.resolve(packagePath, 'template'),
-            path.resolve(packagePath, 'template/ngdoc')
+            path.resolve(packagePath, 'templates'),
+            path.resolve(packagePath, 'templates/ngdoc')
         ]
     })
+
     .config(function(readFilesProcessor, writeFilesProcessor){
         readFilesProcessor.basePath = projectPath;
         readFilesProcessor.sourceFiles = [
             { include:'dist/ng-table.js', basePath:'dist' }
         ];
         writeFilesProcessor.outputFolder = 'dist/docs'
+    })
+    .config(function(computeIdsProcessor, computePathsProcessor){
+        computeIdsProcessor.idTemplates.push({
+            docTypes: ['parameters'],
+            idTemplate: 'parameters-${fileInfo.relativePath.replace("/","-")}',
+            getAliases: function(doc) { return [doc.id]; }
+        });
+
+        computePathsProcessor.pathTemplates.push({
+            docTypes: ['parameters'],
+            getPath: function(doc) {
+                var docPath = path.dirname(doc.fileInfo.relativePath);
+                if ( doc.fileInfo.baseName !== 'index' ) {
+                    docPath = path.join(docPath, doc.fileInfo.baseName);
+                }
+                return docPath;
+            },
+            getOutputPath: function(doc) {
+                return path.join(
+                        'partials',
+                        path.dirname(doc.fileInfo.relativePath),
+                        doc.fileInfo.baseName) + '.html';
+            }
+        });
     })
     .config(function(generateComponentGroupsProcessor){
         generateComponentGroupsProcessor.$enabled = false;
