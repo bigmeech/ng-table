@@ -1,10 +1,11 @@
-var ngTableDoc = angular.module('ngTableDoc',[])
+var ngTableDoc = angular.module('ngTableDoc',['ngRoute', 'ngMessages'])
     .config([
-        'NAVSERVICE','$routeProvider', function(NAVSERVICE, $routeProvider){
+        'NAVSERVICE',
+        '$routeProvider',
+        function(NAVSERVICE, $routeProvider){
             $routeProvider.when('/',{
                 templateUrl:'/partials/get-started.template.html'
             })
-
         }
     ])
     .controller('MainController', function($scope){

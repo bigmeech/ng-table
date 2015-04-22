@@ -41,9 +41,11 @@ module.exports = function componentsDataProcessor(){
             });
 
             docs.push({
-                template:'nav-service.js',
-                ouputPath:'js/NAVSERVICE.js',
-                path:'js/NAVSERVICE.js'
+                name:'NAVSERVICE',
+                template:'constants.template.js',
+                outputPath:'app/js/nav-service.js',
+                path:'app/js/nav-service.js',
+                items:[{hey:'ho'}]
             });
         }
     }

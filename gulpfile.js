@@ -2,9 +2,16 @@ var gulp = require('gulp');
 var Dgeni = require('dgeni');
 var dgeni_config = require('./docs/config');
 var webserver = require("gulp-webserver");
+var browserify = require('gulp-browserify');
 
 gulp.task('build:doc-assets', function(){
     gulp.src(['./docs/app/**/*']).pipe(gulp.dest('./dist/docs/app'))
+});
+
+gulp.task('compile:doc-src', function(){
+    gulp.src('../docs/app/js/app.js')
+        .pipe(browserify( {insertGlobals:true} ))
+        .pipe(gulp.dest('../dist/docs/app/js'));
 });
 
 //Include all needed vendor CSS require by vendor libs
@@ -31,4 +38,5 @@ gulp.task('run:server', function(){
             }
         ));
 });
+
 gulp.task('default',["build:doc-assets", "run:dgeni", "run:server"]);
