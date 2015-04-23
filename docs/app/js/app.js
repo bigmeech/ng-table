@@ -1,3 +1,4 @@
+var NAVSERVICE_CONSTANT = require('./nav-service');
 var ngTableDoc = angular.module('ngTableDoc',['ngRoute', 'ngMessages'])
     .config([
         'NAVSERVICE',
@@ -19,3 +20,5 @@ var ngTableDoc = angular.module('ngTableDoc',['ngRoute', 'ngMessages'])
     .controller('RunnableController', function(){
 
     });
+
+ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data)

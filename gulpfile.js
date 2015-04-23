@@ -3,15 +3,17 @@ var Dgeni = require('dgeni');
 var dgeni_config = require('./docs/config');
 var webserver = require("gulp-webserver");
 var browserify = require('gulp-browserify');
+var sequence = require('gulp-sequence');
+var wait = require('gulp-wait');
 
 gulp.task('build:doc-assets', function(){
     gulp.src(['./docs/app/**/*']).pipe(gulp.dest('./dist/docs/app'))
 });
 
 gulp.task('compile:doc-src', function(){
-    gulp.src('../docs/app/js/app.js')
+    gulp.src('dist/docs/app/js/app.js')
         .pipe(browserify( {insertGlobals:true} ))
-        .pipe(gulp.dest('../dist/docs/app/js'));
+        .pipe(gulp.dest('dist/docs/app/build'));
 });
 
 //Include all needed vendor CSS require by vendor libs
@@ -39,4 +41,6 @@ gulp.task('run:server', function(){
         ));
 });
 
-gulp.task('default',["build:doc-assets", "run:dgeni", "run:server"]);
+gulp.task('run:build-sequence', sequence('build:doc-assets','run:dgeni','compile:doc-src','run:server'));
+
+gulp.task('default',["build:doc-assets", "run:dgeni","compile:doc-src", "run:server"]);

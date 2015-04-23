@@ -7,7 +7,7 @@ module.exports = function componentsDataProcessor(){
             var nav = {
                 getStarted:'GetStarted',
                 api:'API Documentation',
-                demo:'Demo'
+                examples:'Examples'
             };
 
             var pages = _.filter(function(doc){
@@ -30,14 +30,14 @@ module.exports = function componentsDataProcessor(){
 
             docs.push({
                 template:'get-started.template.html',
-                outputPath:'get-started.html',
-                path:'get-started.html'
+                outputPath:'partials/get-started.html',
+                path:'partials/get-started.html'
             });
 
             docs.push({
                 template:'nav.template.html',
-                outputPath:'nav.html',
-                path:'nav.html'
+                outputPath:'partials/nav.html',
+                path:'partials/nav.html'
             });
 
             docs.push({

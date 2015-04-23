@@ -1,4 +1,6 @@
-
+body{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
+}
 
 #doc-search{
     color: #000000;
@@ -21,4 +23,26 @@
 #top-nav  li{
     float: left;
     margin-right: 50px;
+}
+
+#side-nav ul{
+    list-style-type: none;
+}
+
+#side-nav ul li a{
+    text-decoration: none;
+}
+
+
+#side-nav ul li a:hover{
+    text-decoration: underline;
+}
+
+#content{
+    width: 80%;
+    background-color: #fff;
+    height: 100%;
+    position: fixed;
+    left: 570px;
+    padding: 62px;
 }

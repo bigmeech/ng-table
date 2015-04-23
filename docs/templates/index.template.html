@@ -12,7 +12,7 @@
     <script src="../app/vendor/angular-route/angular-route.min.js"></script>
     <script src="../app/vendor/angular-aria/angular-aria.min.js"></script>
     <script src="../app/vendor/angular-messages/angular-messages.min.js"></script>
-    <script src="../app/js/app.js"></script>
+    <script src="../app/build/app.js"></script>
 </head>
 <body ng-controller="MainController">
 <div id="top-header">
@@ -34,7 +34,7 @@
 <div class="container">
     <div class="row" ng-switch="vm.currentPage">
         <div id="side-nav" class="pull-left">
-            <div ng-include="/partials/nav.html"></div>
+            <div ng-include="'/partials/nav.html'"></div>
         </div>
         <div id="content" class="pull-left">Getting Started</div>
         <div class="clearfix"></div>
