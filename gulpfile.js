@@ -6,13 +6,16 @@ var browserify = require('gulp-browserify');
 var sequence = require('gulp-sequence');
 var wait = require('gulp-wait');
 
-gulp.task('build:doc-assets', function(){
+//serverStream
+var serverStream;
+
+gulp.task('build:doc-assets', function () {
     gulp.src(['./docs/app/**/*']).pipe(gulp.dest('./dist/docs/app'))
 });
 
-gulp.task('compile:doc-src', function(){
+gulp.task('compile:doc-src', function () {
     gulp.src('dist/docs/app/js/app.js')
-        .pipe(browserify( {insertGlobals:true} ))
+        .pipe(browserify({insertGlobals: true}))
         .pipe(gulp.dest('dist/docs/app/build'));
 });
 
@@ -24,23 +27,33 @@ gulp.task('vendor-css', function () {
     ]).pipe(gulp.dest('./docs/release/app/vendor/css'));
 });
 
-gulp.task('run:dgeni', function(){
+gulp.task('run:dgeni', function () {
     var dgeni = new Dgeni([dgeni_config]);
-    return dgeni.generate().then(function(docs){
+    return dgeni.generate().then(function (docs) {
         console.log(docs.length, 'docs generated');
     })
 });
 
-gulp.task('run:server', function(){
-    gulp.src('./dist/docs')
+gulp.task('run:server', function () {
+    serverStream = gulp.src('./dist/docs')
         .pipe(webserver(
             {
-                port:3030,
-                open:'http://localhost:3030/'
+                port: 3030,
+                open: 'http://localhost:3030/'
             }
         ));
 });
 
-gulp.task('run:build-sequence', sequence('build:doc-assets','run:dgeni','compile:doc-src','run:server'));
+gulp.task('watch:files', function () {
+    gulp.watch(['docs/**/*.*'], ['run:build-sequence'])
+});
 
-gulp.task('default',["build:doc-assets", "run:dgeni","compile:doc-src", "run:server"]);
+gulp.task('kill-server', function () {
+    if(serverStream) serverStream.emit('kill');
+});
+
+gulp.task('run:build-sequence', function (callback) {
+    sequence('build:doc-assets', 'run:dgeni', 'compile:doc-src', 'kill-server', 'run:server', 'watch:files')(callback);
+});
+
+gulp.task('default', ["build:doc-assets", "run:dgeni", "compile:doc-src", "run:server"]);
