@@ -8,10 +8,10 @@
 
 /**
  * @ngdoc object
- * @name ngTable.directive:ngTable.ngTableController
+ * @name ngTable.directive.html:ngTable.ngTableController
  *
  * @description
- * Each {@link ngTable.directive:ngTable ngTable} directive creates an instance of `ngTableController`
+ * Each {@link ngTable.directive.html:ngTable ngTable} directive creates an instance of `ngTableController`
  */
 app.controller('ngTableController', ['$scope', 'NgTableParams', '$timeout', '$parse', '$compile', '$attrs', '$element',
     'ngTableColumn',
@@ -177,10 +177,10 @@ function($scope, NgTableParams, $timeout, $parse, $compile, $attrs, $element, ng
 
 /**
  * @ngdoc service
- * @name ngTable.factory:ngTableColumn
+ * @name ngTable.factory.html:ngTableColumn
  *
  * @description
- * Service to construct a $column definition used by {@link ngTable.directive:ngTable ngTable} directive
+ * Service to construct a $column definition used by {@link ngTable.directive.html:ngTable ngTable} directive
  */
 app.factory('ngTableColumn', [function () {
 
@@ -198,8 +198,8 @@ app.factory('ngTableColumn', [function () {
 
     /**
      * @ngdoc method
-     * @name ngTable.factory:ngTableColumn#buildColumn
-     * @methodOf ngTable.factory:ngTableColumn
+     * @name ngTable.factory.html:ngTableColumn#buildColumn
+     * @methodOf ngTable.factory.html:ngTableColumn
      * @description Creates a $column for use within a header template
      *
      * @param {Object} column an existing $column or simple column data object

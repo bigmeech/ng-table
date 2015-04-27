@@ -19,8 +19,8 @@ module.exports = new Package('ng-table', [
         };
 
         templateFinder.templateFolders = [
-            path.resolve(packagePath, 'templates'),
-            path.resolve(packagePath, 'templates/ngdoc')
+            path.resolve(packagePath, 'template'),
+            path.resolve(packagePath, 'template/ngdoc')
         ]
     })
 

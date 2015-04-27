@@ -39,7 +39,10 @@ gulp.task('run:server', function () {
         .pipe(webserver(
             {
                 port: 3030,
-                open: 'http://localhost:3030/'
+                open: true,
+                livereload:{
+                    setenabled:true
+                }
             }
         ));
 });

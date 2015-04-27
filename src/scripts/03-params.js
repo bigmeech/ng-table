@@ -18,7 +18,7 @@ app.value('ngTableDefaults', {
 
 /**
  * @ngdoc service
- * @name ngTable.factory:NgTableParams
+ * @name ngTable.factory.html:NgTableParams
  * @description Parameters manager for ngTable
  */
 
@@ -38,8 +38,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#parameters
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#parameters
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Set new parameters or get current parameters
          *
          * @param {string} newParameters      New parameters
@@ -78,8 +78,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#settings
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#settings
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Set new settings for table
          *
          * @param {string} newSettings New settings or undefined
@@ -100,8 +100,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#page
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#page
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description If parameter page not set return current page else set current page
          *
          * @param {string} page Page number
@@ -115,8 +115,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#total
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#total
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description If parameter total not set return current quantity else set quantity
          *
          * @param {string} total Total quantity of items
@@ -130,8 +130,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#count
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#count
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description If parameter count not set return current count per page else set count per page
          *
          * @param {string} count Count per number
@@ -147,8 +147,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#filter
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#filter
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description If parameter page not set return current filter else set current filter
          *
          * @param {string} filter New filter
@@ -163,8 +163,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#sorting
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#sorting
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description If 'sorting' parameter is not set, return current sorting. Otherwise set current sorting.
          *
          * @param {string} sorting New sorting
@@ -186,8 +186,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#isSortBy
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#isSortBy
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Checks sort field
          *
          * @param {string} field     Field name
@@ -200,8 +200,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#orderBy
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#orderBy
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Return object of sorting parameters for angular filter
          *
          * @returns {Array} Array like: [ '-name', '+age' ]
@@ -216,8 +216,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#getData
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#getData
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Called when updated some of parameters for get new data
          *
          * @param {Object} $defer promise object
@@ -234,8 +234,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#getGroups
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#getGroups
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Return groups for table grouping
          */
         this.getGroups = function($defer, column) {
@@ -264,8 +264,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#generatePagesArray
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#generatePagesArray
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Generate array of pages
          *
          * @param {boolean} currentPage which page must be active
@@ -330,8 +330,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#url
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#url
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Return groups for table grouping
          *
          * @param {boolean} asString flag indicates return array of string or object
@@ -369,8 +369,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name ngTable.factory:NgTableParams#reload
-         * @methodOf ngTable.factory:NgTableParams
+         * @name ngTable.factory.html:NgTableParams#reload
+         * @methodOf ngTable.factory.html:NgTableParams
          * @description Reload table data
          */
         this.reload = function() {
@@ -452,7 +452,7 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
 /**
  * @ngdoc service
- * @name ngTable.factory:ngTableParams
+ * @name ngTable.factory.html:ngTableParams
  * @description Backwards compatible shim for lowercase 'n' in NgTableParams
  */
 app.factory('ngTableParams', ['NgTableParams', function(NgTableParams) {

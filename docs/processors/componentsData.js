@@ -7,18 +7,21 @@ module.exports = function componentsDataProcessor() {
 
             var navigation = [
                 {
+                    title:'Getting Started',
                     name: 'gettingStarted',
-                    path: '/get-started',
+                    url: '/docs/get-started',
                     items: []
                 },
                 {
+                    title:'API Docucmentation',
                     name:'api',
-                    path:'/api',
+                    url:'/docs/api',
                     items:[]
                 },
                 {
+                    title:'Examples',
                     name:'examples',
-                    path:'/examples',
+                    url:'/docs/examples',
                     items:[]
                 }
             ];
@@ -29,6 +32,12 @@ module.exports = function componentsDataProcessor() {
 
             var apiNav = _.filter(pages, function (page) {
                 return page.area === 'api';
+            });
+
+            docs.push({
+                template: 'index.template.html',
+                outputPath: 'index.html',
+                path: 'index.html'
             });
 
             docs.push({

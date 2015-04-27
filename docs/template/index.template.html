@@ -33,13 +33,11 @@
 </div>
 <div class="container">
     <div class="row" ng-switch="vm.currentPage">
-        <div id="side-nav" class="pull-left">
-            <div ng-include="'/partials/nav.html'" ng-controller="NavController"></div>
+        <div id="side-nav" class="pull-left"  ng-controller="NavController">
+            <div ng-include="'/partials/nav.html'"></div>
         </div>
-        <div id="content" class="pull-left">
-            <div ui-view>
-                Getting Started
-            </div>
+        <div id="content" class="col-md-6 pull-left">
+            <div ui-view></div>
         </div>
         <div class="clearfix"></div>
     </div>

@@ -5,17 +5,17 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         '$stateProvider',
         '$urlRouterProvider',
         function (NAVSERVICE, $stateProvider, $urlRouterProvider) {
-
+            $urlRouterProvider.otherwise("/docs/get-started");
             $stateProvider
                 .state('gettingStarted', {
                     url:'/docs/get-started',
-                    templateUrl: '/partials/get-started.html',
+                    templateUrl: '/partials/api/ngTable/index.html',
                     controller:'NavController'
                 })
                 .state('api', {
-                    url:'/docs/api',
+                    url:'/docs/api/:doc',
                     templateUrl:function($stateParams){
-                        return '/partials/'+ $stateParams.api +'.html';
+                        return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/ng-table.html';
                     },
                     controller:'NavController'
                 })
@@ -25,14 +25,37 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
                     controller:'NavController'
                 });
         }
-    ])
-    .controller('MainController', function ($scope) {
-        var vm = {};
-        vm.currentPage = "start";
-        $scope.vm = vm;
+    ]).run(function($rootScope, NavStateService){
+        $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+            NavStateService.setView(toState.name);
+            console.log('Switched state to', toState.name)
+        });
     })
-    .controller('NavController', function (NAVSERVICE,$stateParams) {
-        console.log(NAVSERVICE, $stateParams);
+    .factory('NavStateService', function(){
+        //default state
+        var navState = "gettingStarted";
+        return{
+            getView:function(){
+                return navState;
+            },
+            setView:function(viewName){
+                navState = viewName
+            }
+        }
+    })
+    .controller('MainController', function ($scope) {
+        var model = {};
+        $scope.vm = model;
+    })
+    .controller('NavController', function ($scope,$location, NAVSERVICE, NavStateService) {
+        var model = {};
+        var currentView = NavStateService.getView();
+        model.navigation = NAVSERVICE.filter(function(navItem){
+            return currentView === navItem.name
+        });
+        model.navigation = model.navigation[0];
+        $scope.vm = model;
+        $scope.$apply();
     });
 
-ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data)
+ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data);
