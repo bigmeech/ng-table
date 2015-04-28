@@ -1,8 +1,11 @@
-<h3>{{vm.navigation.title}}</h3>
+<h4>{{vm.navigation.title}}</h4>
 <nav id="side-nav">
     <ul>
-        <li ng-repeat="navItem in vm.navigation.items">
-            <a ui-sref="{{navItem.url}}">{{navItem.name}}</a>
+        <li ng-repeat="part in vm.navigation.items">
+            <h5>{{part.type}}</h5>
+            <ul>
+                <li ng-repeat="nav in part.items">{{nav.name}}</li>
+            </ul>
         </li>
     </ul>
 </nav>

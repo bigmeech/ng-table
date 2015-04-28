@@ -5,7 +5,24 @@ module.exports = function componentsDataProcessor() {
         $runAfter: ['paths-computed'],
         $process: function (docs) {
 
-            var apiParts = [];
+            var apiParts = [
+                {type: 'module', items: []},
+                {type: 'service', items: []},
+                {type: 'directive', items: []},
+                {type: 'object', items: []},
+                {type: 'parameters', items: []}
+            ];
+
+            docs.forEach(function (doc) {
+                var part = _.find(apiParts, function (part) {
+                    if (part.type === doc.docType)
+                        return true;
+                });
+                if(part)
+                    part.items.push({ name:doc.name, url:doc.outputPath });
+                else return
+            });
+
             var navigation = [
                 {
                     title: 'Getting Started',
@@ -26,29 +43,6 @@ module.exports = function componentsDataProcessor() {
                     items: []
                 }
             ];
-
-
-            // factory controller dirctive modules
-            apiParts = [
-                {type: 'module', items: []},
-                {type: 'service', items: []},
-                {type: 'directive', items: []},
-                {type: 'controller', items: []},
-                {type: 'parameters', items: []}
-            ];
-
-            var apiNavParts = _(docs).forEach(function (doc) {
-                var part = _.find(apiParts, function (part) {
-                    if (part.type === doc.docType)
-                        return true;
-                    else if (doc.codeName === "controller")
-                        return true;
-                });
-                part.items.push({
-                    name:doc.name,
-                    url:doc.outputPath
-                });
-            }).value();
 
             docs.push({
                 template: 'index.template.html',
