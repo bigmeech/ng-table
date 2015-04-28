@@ -9,20 +9,33 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
             $stateProvider
                 .state('gettingStarted', {
                     url:'/docs/get-started',
-                    templateUrl: '/partials/api/ngTable/index.html',
-                    controller:'NavController'
+                    views:{
+                        'navigation':{
+                            templateUrl:'/partials/nav.html',
+                            controller:'NavController'
+                        },
+                        'content':{
+                            templateUrl: '/partials/api/ngTable/index.html'
+                        }
+                    }
                 })
                 .state('api', {
                     url:'/docs/api/:doc',
-                    templateUrl:function($stateParams){
-                        return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/ng-table.html';
-                    },
-                    controller:'NavController'
+                    views:{
+                        'navigation':{
+                            templateUrl:'/partials/nav.html',
+                            controller:'NavController'
+                        },
+                        'content':{
+                            templateUrl: function($stateParams){
+                                return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/ng-table.html';
+                            }
+                        }
+                    }
                 })
                 .state('examples',{
                     url:'/docs/api/examples',
-                    templateUrl:'/partials/examples/',
-                    controller:'NavController'
+                    templateUrl:'/partials/examples/'
                 });
         }
     ]).run(function($rootScope, NavStateService){
@@ -55,7 +68,6 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         });
         model.navigation = model.navigation[0];
         $scope.vm = model;
-        $scope.$apply();
     });
 
 ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data);

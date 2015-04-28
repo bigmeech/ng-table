@@ -5,34 +5,50 @@ module.exports = function componentsDataProcessor() {
         $runAfter: ['paths-computed'],
         $process: function (docs) {
 
+            var apiParts = [];
             var navigation = [
                 {
-                    title:'Getting Started',
+                    title: 'Getting Started',
                     name: 'gettingStarted',
                     url: '/docs/get-started',
                     items: []
                 },
                 {
-                    title:'API Docucmentation',
-                    name:'api',
-                    url:'/docs/api',
-                    items:[]
+                    title: 'API Docucmentation',
+                    name: 'api',
+                    url: '/docs/api',
+                    items: apiParts
                 },
                 {
-                    title:'Examples',
-                    name:'examples',
-                    url:'/docs/examples',
-                    items:[]
+                    title: 'Examples',
+                    name: 'examples',
+                    url: '/docs/examples',
+                    items: []
                 }
             ];
 
-            var pages = _.filter(function (doc) {
-                return doc.area;
-            });
 
-            var apiNav = _.filter(pages, function (page) {
-                return page.area === 'api';
-            });
+            // factory controller dirctive modules
+            apiParts = [
+                {type: 'module', items: []},
+                {type: 'service', items: []},
+                {type: 'directive', items: []},
+                {type: 'controller', items: []},
+                {type: 'parameters', items: []}
+            ];
+
+            var apiNavParts = _(docs).forEach(function (doc) {
+                var part = _.find(apiParts, function (part) {
+                    if (part.type === doc.docType)
+                        return true;
+                    else if (doc.codeName === "controller")
+                        return true;
+                });
+                part.items.push({
+                    name:doc.name,
+                    url:doc.outputPath
+                });
+            }).value();
 
             docs.push({
                 template: 'index.template.html',
@@ -41,9 +57,9 @@ module.exports = function componentsDataProcessor() {
             });
 
             docs.push({
-                template: 'index.template.html',
-                outputPath: 'index.html',
-                path: 'index.html'
+                template: 'content.template.html',
+                outputPath: 'partials/content.html',
+                path: 'partials/content.html'
             });
 
             docs.push({
