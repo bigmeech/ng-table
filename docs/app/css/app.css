@@ -1,3 +1,5 @@
+
+
 body{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
 }
@@ -27,6 +29,7 @@ body{
 
 #side-nav{
     text-align: right;
+    margin-top: 50px;
 }
 
 #side-nav ul{
@@ -42,6 +45,30 @@ body{
     text-decoration: underline;
 }
 
+td a{
+    color: #0099FF;
+}
+
+th{
+    padding: 12px;
+}
+
+
+
+table{
+    width: 100%;
+}
+thead{
+    padding: 50px;
+}
+
+tbody td{
+    padding: 10px;
+}
+tbody td a{
+    color: #000011 !important;
+}
+
 #content{
     background-color: #fff;
     height: 100%;
@@ -49,4 +76,9 @@ body{
     left: 615px;
     padding: 62px;
     overflow-y: auto;
+}
+
+.method-header{
+    padding: 20px;
+    background-color: #FAFAFA;
 }

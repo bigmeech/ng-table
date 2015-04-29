@@ -10,7 +10,7 @@ module.exports = function componentsDataProcessor() {
                 {type: 'service', items: []},
                 {type: 'directive', items: []},
                 {type: 'object', items: []}
-            ];
+            ]
 
             docs.forEach(function (doc) {
                 var part = _.find(apiParts, function (part) {
