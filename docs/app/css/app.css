@@ -25,6 +25,10 @@ body{
     margin-right: 50px;
 }
 
+#side-nav{
+    text-align: right;
+}
+
 #side-nav ul{
     list-style-type: none;
 }
@@ -42,6 +46,6 @@ body{
     background-color: #fff;
     height: 100%;
     position: fixed;
-    left: 570px;
+    left: 600px;
     padding: 62px;
 }

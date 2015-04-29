@@ -36,18 +36,15 @@ gulp.task('run:dgeni', function () {
 
 gulp.task('run:server', function () {
     serverStream = gulp.src('./dist/docs')
-        .pipe(webserver(
-            {
+        .pipe(webserver({
                 port: 3030,
-                livereload:{
-                    setenabled:true
-                }
-            }
-        ));
+                livereload:true,
+                open:true
+        }));
 });
 
 gulp.task('watch:files', function () {
-    gulp.watch(['docs/**/*.*'], ['run:build-sequence'])
+    gulp.watch(['docs/**/*.*'], ['build:doc-assets', 'run:dgeni', 'compile:doc-src'])
 });
 
 gulp.task('kill-server', function () {

@@ -2,9 +2,11 @@
 <nav id="side-nav">
     <ul>
         <li ng-repeat="part in vm.navigation.items">
-            <h5>{{part.type}}</h5>
+            <h5><strong>{{part.type}}</strong></h5>
             <ul>
-                <li ng-repeat="nav in part.items">{{nav.name}}</li>
+                <li ng-repeat="nav in part.items">
+                    <a ui-sref='#/api/docs/ngTable'>{{nav.name}}</a>
+                </li>
             </ul>
         </li>
     </ul>

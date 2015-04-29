@@ -28,7 +28,7 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
                         },
                         'content':{
                             templateUrl: function($stateParams){
-                                return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/ng-table.html';
+                                return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/api-index.html';
                             }
                         }
                     }
@@ -70,4 +70,4 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         $scope.vm = model;
     });
 
-ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data);
+ngTableDoc.constant('NAVSERVICE', NAVSERVICE_CONSTANT.data)

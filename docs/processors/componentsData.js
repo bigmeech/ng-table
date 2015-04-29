@@ -18,8 +18,11 @@ module.exports = function componentsDataProcessor() {
                     if (part.type === doc.docType)
                         return true;
                 });
-                if(part)
-                    part.items.push({ name:doc.name, url:doc.outputPath });
+
+                if(part) part.items.push({
+                    name:doc.name,
+                    url:doc.outputPath
+                });
                 else return
             });
 
@@ -48,6 +51,12 @@ module.exports = function componentsDataProcessor() {
                 template: 'content.template.html',
                 outputPath: 'partials/content.html',
                 path: 'partials/content.html'
+            });
+
+            docs.push({
+                template: 'api-index.template.html',
+                outputPath: 'partials/api-index.html',
+                path: 'partials/api-index.html'
             });
 
             docs.push({
