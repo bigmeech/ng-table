@@ -58,8 +58,7 @@ var app = angular.module('ngTable', []);
 
 /**
  * @ngdoc object
- * @name ngTableDefaultParams
- * @module ngTable.value
+ * @name ngTable.value:ngTableDefaultParams
  * @description Default Parameters for ngTable
  */
 app.value('ngTableDefaults', {
@@ -69,8 +68,7 @@ app.value('ngTableDefaults', {
 
 /**
  * @ngdoc service
- * @name NgTableParams
- * @module ngTable.factory
+ * @name ngTable.factory:NgTableParams
  * @description Parameters manager for ngTable
  */
 
@@ -89,10 +87,8 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
         this.data = [];
 
         /**
-         * @ngdoc object
-         * @name method
-         * @kind function
-         * @module ngTable.factory.NgTableParams
+         * @ngdoc method
+         * @name ngTable.factory:NgTableParams#parameters
          * @description Set new parameters or get current parameters
          *
          * @param {string} newParameters      New parameters
@@ -131,8 +127,7 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name settings
-         * @module ngTable.factory
+         * @name ngTable.factory:NgTableParams#settings
          * @description Set new settings for table
          *
          * @param {string} newSettings New settings or undefined
@@ -153,8 +148,7 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name page
-         * @module ngTable
+         * @name ngTable.factory:NgTableParams#page
          * @description If parameter page not set return current page else set current page
          *
          * @param {string} page Page number
@@ -168,8 +162,7 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name total
-         * @module ngTable.factory:NgTableParams
+         * @name ngTable.factory:NgTableParams#total
          * @description If parameter total not set return current quantity else set quantity
          *
          * @param {string} total Total quantity of items
@@ -183,8 +176,7 @@ app.factory('NgTableParams', ['$q', '$log', 'ngTableDefaults', function($q, $log
 
         /**
          * @ngdoc method
-         * @name count
-         * @module
+         * @name ngTable.factory:NgTableParams#count
          * @description If parameter count not set return current count per page else set count per page
          *
          * @param {string} count Count per number
