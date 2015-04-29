@@ -45,12 +45,6 @@ module.exports = function componentsDataProcessor() {
             ];
 
             docs.push({
-                template: 'index.template.html',
-                outputPath: 'index.html',
-                path: 'index.html'
-            });
-
-            docs.push({
                 template: 'content.template.html',
                 outputPath: 'partials/content.html',
                 path: 'partials/content.html'
