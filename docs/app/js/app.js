@@ -28,7 +28,7 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
                         },
                         'content':{
                             templateUrl: function($stateParams){
-                                return $stateParams.doc ? '/partials/' + $stateParams.doc +'.html' : '/partials/api-index.html';
+                                return $stateParams.doc ? $stateParams.doc : '/partials/api-index.html';
                             }
                         }
                     }

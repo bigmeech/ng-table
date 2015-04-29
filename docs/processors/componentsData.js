@@ -9,8 +9,7 @@ module.exports = function componentsDataProcessor() {
                 {type: 'module', items: []},
                 {type: 'service', items: []},
                 {type: 'directive', items: []},
-                {type: 'object', items: []},
-                {type: 'parameters', items: []}
+                {type: 'object', items: []}
             ];
 
             docs.forEach(function (doc) {

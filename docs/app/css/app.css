@@ -46,6 +46,7 @@ body{
     background-color: #fff;
     height: 100%;
     position: fixed;
-    left: 600px;
+    left: 615px;
     padding: 62px;
+    overflow-y: auto;
 }
