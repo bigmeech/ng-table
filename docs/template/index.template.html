@@ -26,16 +26,16 @@
             <div ui-view="navigation"></div>
         </div>
         <div id="content" class="col-md-6 pull-left">
-            <h3 id="brand" class="pull-left">Ng Table</h3>
+
             <nav id="top-nav" class="pull-left">
+                <h3 id="brand" class="pull-left">Ng Table</h3>
                 <ul>
-                    <li><a ui-sref="gettingStarted">Getting Started</a></li>
                     <li><a ui-sref="api">API Documentation</a></li>
                     <li><a ui-sref="examples">Runnable Examples</a></li>
                 </ul>
             </nav>
             <div class="clearfix"></div>
-            <div ui-view="content"></div>
+            <div id="api-content" ui-view="content"></div>
         </div>
         <div class="clearfix"></div>
     </div>

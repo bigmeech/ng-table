@@ -27,12 +27,6 @@ module.exports = function componentsDataProcessor() {
 
             var navigation = [
                 {
-                    title: 'Getting Started',
-                    name: 'gettingStarted',
-                    url: '/docs/get-started',
-                    items: []
-                },
-                {
                     title: 'API Docucmentation',
                     name: 'api',
                     url: '/docs/api',

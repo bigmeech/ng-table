@@ -5,20 +5,8 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         '$stateProvider',
         '$urlRouterProvider',
         function (NAVSERVICE, $stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise("/docs/get-started");
+            $urlRouterProvider.otherwise("/docs/api/");
             $stateProvider
-                .state('gettingStarted', {
-                    url:'/docs/get-started',
-                    views:{
-                        'navigation':{
-                            templateUrl:'/partials/nav.html',
-                            controller:'NavController'
-                        },
-                        'content':{
-                            templateUrl: '/partials/api/ngTable/index.html'
-                        }
-                    }
-                })
                 .state('api', {
                     url:'/docs/api/:doc',
                     views:{
