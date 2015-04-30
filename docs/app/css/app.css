@@ -1,4 +1,11 @@
-
+/*
+  make a block level elements visible (for debugging purpose)
+*{
+    border: 1px solid #000;
+    padding: 2px;
+    margin: 2px;
+}
+*/
 
 html, body{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
@@ -21,7 +28,7 @@ html, body{
 
 #top-nav{
     width: 96%;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     background-color: #fff;
     padding-bottom: 15px;
@@ -41,9 +48,11 @@ html, body{
 #side-nav{
     text-align: right;
     margin-top: 50px;
-    display: inline-block;
-    float: left;
+    /* display: inline-block; */
+    /* float: left; */
     margin-right: 25px;
+    position: fixed;
+    width: 200px;
 }
 
 #side-nav ul{
@@ -61,6 +70,7 @@ html, body{
 
 #api-content{
     margin-top: 100px;
+    background-color: #fff;
 }
 
 td a{
@@ -90,7 +100,6 @@ tbody td a{
 .content{
     background-color: #fff;
     height: 100%;
-    overflow-y: auto;
     margin-top: 53px;
 }
 
@@ -124,4 +133,5 @@ code{
     position: relative;
     display: inline-block;
     white-space: nowrap;
+    margin-left: 220px;
 }
