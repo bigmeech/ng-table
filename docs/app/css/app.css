@@ -1,7 +1,9 @@
 
 
-body{
+html, body{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
+    width: 100% !important;
+    height: 100% !important; /* Sue me :) */
 }
 
 #doc-search{
@@ -18,9 +20,12 @@ body{
 }
 
 #top-nav{
-    width: 100%;
-    position: fixed;
+    width: 96%;
+    position: absolute;
     z-index: 1000;
+    background-color: #fff;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 #top-nav ul{
@@ -36,6 +41,9 @@ body{
 #side-nav{
     text-align: right;
     margin-top: 50px;
+    display: inline-block;
+    float: left;
+    margin-right: 25px;
 }
 
 #side-nav ul{
@@ -79,12 +87,11 @@ tbody td a{
     color: #000011 !important;
 }
 
-#content{
+.content{
     background-color: #fff;
     height: 100%;
-    position: fixed;
-    left: 615px;
     overflow-y: auto;
+    margin-top: 53px;
 }
 
 .methods{
@@ -103,4 +110,18 @@ code{
     padding: 20px;
     background-color: #FAFAFA;
     border: 1px solid #F0F0F0;
+}
+
+.fixed{
+    position: fixed;
+}
+
+.full-height{
+    height: 100%;
+}
+
+#column{
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
 }

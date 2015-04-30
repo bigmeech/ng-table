@@ -15,27 +15,23 @@
     <script src="../app/build/app.js"></script>
 </head>
 <body ng-controller="MainController">
-<div id="top-header">
-    <div class="container">
 
-    </div>
-</div>
-<div class="container">
-    <div class="row" ng-switch="vm.currentPage">
+<div class="container-fluid full-height">
+    <div class="row full-height" ng-switch="vm.currentPage">
         <div id="side-nav" class="pull-left">
             <div ui-view="navigation"></div>
         </div>
-        <div id="content" class="col-md-6 pull-left">
-
-            <nav id="top-nav" class="pull-left">
-                <h3 id="brand" class="pull-left">Ng Table</h3>
+        <div id="column" class="col-md-8 pull-left full-height">
+            <nav id="top-nav">
                 <ul>
                     <li><a ui-sref="api">API Documentation</a></li>
                     <li><a ui-sref="examples">Runnable Examples</a></li>
                 </ul>
             </nav>
             <div class="clearfix"></div>
-            <div id="api-content" ui-view="content"></div>
+            <div class="content col-md-12">
+                <div id="api-content" ui-view="content"></div>
+            </div>
         </div>
         <div class="clearfix"></div>
     </div>
