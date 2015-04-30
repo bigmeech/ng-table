@@ -5,7 +5,7 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         '$stateProvider',
         '$urlRouterProvider',
         function (NAVSERVICE, $stateProvider, $urlRouterProvider) {
-            /*var baseUrl = "../ng-table";*/
+            var baseUrl = "/ng-table/";
             $urlRouterProvider.otherwise("/docs/api/");
             $stateProvider
                 .state('api', {
