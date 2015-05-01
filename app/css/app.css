@@ -57,6 +57,7 @@ html, body{
 
 #side-nav ul{
     list-style-type: none;
+    padding: 0;
 }
 
 #side-nav ul li a{
