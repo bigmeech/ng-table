@@ -1,9 +1,9 @@
 /*
-  make all block level elements visible (for debugging purpose)
+  make a block level elements visible (for debugging purpose)
 *{
     border: 1px solid #000;
-    padding: 1px;
-    margin: 1px;
+    padding: 2px;
+    margin: 2px;
 }
 */
 
@@ -11,7 +11,6 @@ html, body{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
     width: 100% !important;
     height: 100% !important; /* Sue me :) */
-    overflow: hidden;
 }
 
 #doc-search{
@@ -28,19 +27,17 @@ html, body{
 }
 
 #top-nav{
-    width: 84%;
+    width: 96%;
     position: fixed;
     z-index: 1000;
     background-color: #fff;
-    /* padding-bottom: 15px; */
+    padding-bottom: 15px;
     border-bottom: 1px solid #eee;
-    padding: 25px;
 }
 
 #top-nav ul{
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 18px;
 }
 
 #top-nav  li{
@@ -60,7 +57,6 @@ html, body{
 
 #side-nav ul{
     list-style-type: none;
-    padding: 0;
 }
 
 #side-nav ul li a{
@@ -73,11 +69,8 @@ html, body{
 }
 
 #api-content{
-    margin-top: 71px;
+    margin-top: 100px;
     background-color: #fff;
-    height: 100%;
-    padding: 60px;
-    width: 50%;
 }
 
 td a{
@@ -105,11 +98,9 @@ tbody td a{
 }
 
 .content{
-    /* padding: 50px; */
-    /* background-color: #fff; */
-    /* height: 100%; */
-    /* margin-top: 113px; */
-    /* height: 100%; */
+    background-color: #fff;
+    height: 100%;
+    margin-top: 53px;
 }
 
 .methods{
@@ -143,9 +134,4 @@ code{
     display: inline-block;
     white-space: nowrap;
     margin-left: 220px;
-    width: 88%;
-    height: 100%;
-    overflow-y: auto;
-    box-sizing: border-box;
-    background-color: #fff;
 }

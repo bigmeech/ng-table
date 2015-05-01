@@ -5,26 +5,25 @@ var ngTableDoc = angular.module('ngTableDoc', ['ui.router', 'ngMessages'])
         '$stateProvider',
         '$urlRouterProvider',
         function (NAVSERVICE, $stateProvider, $urlRouterProvider) {
-            var baseUrl = "/ng-table/";
             $urlRouterProvider.otherwise("/docs/api/");
             $stateProvider
                 .state('api', {
                     url:'/docs/api/:doc',
                     views:{
                         'navigation':{
-                            templateUrl:'partials/nav.html',
+                            templateUrl:'/partials/nav.html',
                             controller:'NavController'
                         },
                         'content':{
                             templateUrl: function($stateParams){
-                                return $stateParams.doc ? $stateParams.doc :'partials/api/ngTable/index.html';
+                                return $stateParams.doc ? $stateParams.doc : '/partials/api/ngTable/index.html';
                             }
                         }
                     }
                 })
                 .state('examples',{
-                    url : '/docs/api/examples',
-                    templateUrl :'partials/examples/'
+                    url:'/docs/api/examples',
+                    templateUrl:'/partials/examples/'
                 });
         }
     ]).run(function($rootScope, NavStateService){
