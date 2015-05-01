@@ -5,6 +5,7 @@ var webserver = require("gulp-webserver");
 var browserify = require('gulp-browserify');
 var sequence = require('gulp-sequence');
 var wait = require('gulp-wait');
+var ghPages = require('gulp-gh-pages');
 
 //serverStream
 var serverStream;
@@ -49,6 +50,18 @@ gulp.task('watch:files', function () {
 
 gulp.task('kill-server', function () {
     if(serverStream) serverStream.emit('kill');
+});
+
+gulp.task('deploy:docs', function(){
+    return gulp.src('./dist/docs/**/*').pipe(ghPages(
+        {
+            remoteUrl: 'https://github.com/bigmeech/ng-table.git',
+            branch:'gh-pages',
+            origin: 'origin',
+            push:true,
+            message:"Update" + new Date()
+        }
+    ))
 });
 
 gulp.task('run:build-sequence', function (callback) {
