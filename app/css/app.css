@@ -11,6 +11,7 @@ html, body{
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2NkYGBg+Pr1639ubm5GGA1nIEswUqYSAMjrL8JwoIBIAAAAAElFTkSuQmCC);
     width: 100% !important;
     height: 100% !important; /* Sue me :) */
+    overflow: hidden;
 }
 
 #doc-search{
@@ -27,17 +28,19 @@ html, body{
 }
 
 #top-nav{
-    width: 96%;
+    width: 84%;
     position: fixed;
     z-index: 1000;
     background-color: #fff;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     border-bottom: 1px solid #eee;
+    padding: 25px;
 }
 
 #top-nav ul{
     list-style: none;
-    margin: 18px;
+    margin: 0;
+    padding: 0;
 }
 
 #top-nav  li{
@@ -70,8 +73,10 @@ html, body{
 }
 
 #api-content{
-    margin-top: 51px;
+    margin-top: 71px;
     background-color: #fff;
+    height: 100%;
+    padding: 60px;
 }
 
 td a{
@@ -99,10 +104,11 @@ tbody td a{
 }
 
 .content{
-    padding: 50px;
-    background-color: #fff;
-    height: 100%;
-    margin-top: 53px;
+    /* padding: 50px; */
+    /* background-color: #fff; */
+    /* height: 100%; */
+    /* margin-top: 113px; */
+    /* height: 100%; */
 }
 
 .methods{
@@ -137,4 +143,8 @@ code{
     white-space: nowrap;
     margin-left: 220px;
     width: 88%;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #fff;
 }
