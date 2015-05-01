@@ -99,6 +99,7 @@ tbody td a{
 }
 
 .content{
+    padding: 50px;
     background-color: #fff;
     height: 100%;
     margin-top: 53px;
